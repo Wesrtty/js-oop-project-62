@@ -1,7 +1,7 @@
 # Валидатор данных
 
-[![Actions Status](https://github.com/Wesrtty/js-oop-project-62/workflows/hexlet-check/badge.svg)](https://github.com/Wesrtty/js-oop-project-62/actions)
-[![Actions Status](https://github.com/Wesrtty/js-oop-project-62/actions/workflows/test.yml/badge.svg)](https://github.com/Wesrtty/js-oop-project-62/actions)
+[![Actions Status](https://github.com/Wesrtty/validator/workflows/hexlet-check/badge.svg)](https://github.com/Wesrtty/js-oop-project-62/actions)
+[![Actions Status](https://github.com/Wesrtty/validator/actions/workflows/test.yml/badge.svg)](https://github.com/Wesrtty/js-oop-project-62/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/560d8a97c0c1fbb60f3a/maintainability)](https://codeclimate.com/github/Wesrtty/js-oop-project-62/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/560d8a97c0c1fbb60f3a/test_coverage)](https://codeclimate.com/github/Wesrtty/js-oop-project-62/test_coverage)
 
