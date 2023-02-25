@@ -18,10 +18,10 @@ describe('Validator Number', () => {
     const schema = validator.number().required();
 
     expect(schema.isValid('one')).toBeFalsy();
-    expect(schema.isValid('5')).toBeFalsy();
     expect(schema.isValid('')).toBeFalsy();
     expect(schema.isValid(null)).toBeFalsy();
     expect(schema.isValid(undefined)).toBeFalsy();
+    expect(schema.isValid('5')).toBeFalsy();
 
     expect(schema.isValid(7)).toBeTruthy();
     expect(schema.isValid(0)).toBeTruthy();
@@ -31,10 +31,10 @@ describe('Validator Number', () => {
     const validator = new Validator();
     const schema = validator.number();
 
-    expect(schema.positive().isValid('')).toBeTruthy();
-    expect(schema.positive().isValid(null)).toBeTruthy();
+    expect(schema.positive().isValid('')).toBeFalsy();
+    expect(schema.positive().isValid(null)).toBeFalsy();
     expect(schema.positive().isValid(7)).toBeTruthy();
-    expect(schema.positive().isValid(0)).toBeTruthy();
+    expect(schema.positive().isValid(0)).toBeFalsy();
     expect(schema.positive().isValid('25')).toBeTruthy();
 
     expect(schema.positive().isValid(-1)).toBeFalsy();
@@ -59,6 +59,6 @@ describe('Validator Number', () => {
     const schema = validator.number().required();
 
     expect(schema.positive().range(-5, 5).isValid(-3)).toBeFalsy();
-    expect(schema.positive().range(-5, 5).isValid(0)).toBeTruthy();
+    expect(schema.positive().range(-5, 5).isValid(1)).toBeTruthy();
   });
 });
