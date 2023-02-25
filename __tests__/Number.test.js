@@ -32,13 +32,14 @@ describe('Validator Number', () => {
     const schema = validator.number();
 
     expect(schema.positive().isValid('')).toBeFalsy();
-    expect(schema.positive().isValid(null)).toBeFalsy();
+    expect(schema.positive().isValid(null)).toBeTruthy();
     expect(schema.positive().isValid(7)).toBeTruthy();
     expect(schema.positive().isValid(0)).toBeFalsy();
     expect(schema.positive().isValid('25')).toBeTruthy();
 
     expect(schema.positive().isValid(-1)).toBeFalsy();
     expect(schema.positive().isValid('-1')).toBeFalsy();
+    
   });
 
   test('should check "range" correctly', () => {

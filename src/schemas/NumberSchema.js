@@ -7,7 +7,7 @@ class NumberSchema extends Schema {
   }
 
   positive() {
-    super.addOperation((number) => number > 0);
+    super.addOperation((number) => number > 0 || number === null);
     return this;
   }
 
