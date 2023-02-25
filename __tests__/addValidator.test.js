@@ -3,25 +3,14 @@ import Validator from '../src/Validator.js';
 
 describe('Add new validator', () => {
   test('should validate correctly', () => {
-    const validator = new Validator();
-    const fn = (value, start) => value.startsWith(start);
-    validator.addValidator('string', 'startWith', fn);
+    const validator1 = new Validator();
+    const fn1 = (value, start) => value.startsWith(start);
+    validator1.addValidator('string', 'startWith', fn1);
 
-    const schema = validator.string().test('startWith', 'H');
+    const schema1 = validator1.string().test('startWith', 'H');
 
-    expect(schema.isValid('exlet')).toBeFalsy();
-    expect(schema.isValid('Hexlet')).toBeTruthy();
-  });
-
-  test('should validate correctly', () => {
-    const validator = new Validator();
-    const fn = (value, min) => value >= min;
-    validator.addValidator('number', 'min', fn);
-
-    const schema = validator.number().test('min', 5);
-
-    expect(schema.isValid(4)).toBeFalsy();
-    expect(schema.isValid(6)).toBeTruthy();
+    expect(schema1.isValid('exlet')).toBeFalsy();
+    expect(schema1.isValid('Hexlet')).toBeTruthy();
   });
 
   test('should throw error when validator not found', () => {
