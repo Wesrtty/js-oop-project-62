@@ -1,35 +1,43 @@
 import * as schemas from './schemas/index.js';
 
 class Validator {
-  addValidator(type, name, fn) {
-    const schemasWithLowerCase = Object
-      .entries(schemas)
-      .reduce((acc, [schemaName, className]) => {
-        const newName = schemaName.toLowerCase().replace('schema', '');
-        return { ...acc, [newName]: className };
-      }, {});
+  constructor() {
+    this.schemas = {
+      String: schemas.StringSchema,
+      Number: schemas.NumberSchema,
+      Array: schemas.ArraySchema,
+      Object: schemas.ObjectSchema,
+    };
+  }
 
-    if (!schemasWithLowerCase[type]) {
+  hasSchemas(name) {
+    return Object.hasOwn(this.schemas, name);
+  }
+
+  addValidator(type, name, fn) {
+    const schema = type.charAt(0).toUpperCase() + type.slice(1);
+
+    if (!this.hasSchemas(schema)) {
       throw new Error(`Unable to add validator ${type}`);
     }
 
-    schemasWithLowerCase[type].prototype[name] = fn;
+    this.schemas[schema].prototype[name] = fn;
   }
 
   string() {
-    return new schemas.StringSchema();
+    return new this.schemas.String();
   }
 
   number() {
-    return new schemas.NumberSchema();
+    return new this.schemas.Number();
   }
 
   array() {
-    return new schemas.ArraySchema();
+    return new this.schemas.Array();
   }
 
   object() {
-    return new schemas.ObjectSchema();
+    return new this.schemas.Object();
   }
 }
 

@@ -12,7 +12,6 @@
     },
     "rules": {
         "no-console": "off",
-        "class-methods-use-this": "off",
         "import/extensions": "off",
         "no-prototype-builtins": "off",
         "linebreak-style": "off"
