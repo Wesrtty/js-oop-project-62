@@ -7,6 +7,8 @@ class ObjectSchema extends Schema {
   }
 
   isValid(fields) {
+    if (!fields) return true;
+
     const [operations] = this.getOperations();
     return Object
       .entries(fields)

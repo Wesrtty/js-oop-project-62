@@ -14,5 +14,6 @@ describe('Object', () => {
     expect(schema.isValid({ name: 'maya', age: null })).toBeTruthy();
     expect(schema.isValid({ name: '', age: null })).toBeFalsy();
     expect(schema.isValid({ age: -5, name: 'ada', a: 1 })).toBeFalsy();
+    expect(schema.isValid(null)).toBeTruthy();
   });
 });
