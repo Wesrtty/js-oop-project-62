@@ -39,7 +39,6 @@ describe('Validator Number', () => {
 
     expect(schema.positive().isValid(-1)).toBeFalsy();
     expect(schema.positive().isValid('-1')).toBeFalsy();
-    
   });
 
   test('should check "range" correctly', () => {
