@@ -11,7 +11,7 @@ class Validator {
   }
 
   hasSchemas(name) {
-    return Object.hasOwn(this.schemas, name);
+    return Boolean(this.schemas[name]);
   }
 
   addValidator(type, name, fn) {
