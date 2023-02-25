@@ -1,6 +1,9 @@
 # Валидатор данных
 
 [![Actions Status](https://github.com/Wesrtty/js-oop-project-62/workflows/hexlet-check/badge.svg)](https://github.com/Wesrtty/js-oop-project-62/actions)
+[![Actions Status](https://github.com/Wesrtty/js-oop-project-62/actions/workflows/test.yml/badge.svg)](https://github.com/Wesrtty/js-oop-project-62/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/560d8a97c0c1fbb60f3a/maintainability)](https://codeclimate.com/github/Wesrtty/js-oop-project-62/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/560d8a97c0c1fbb60f3a/test_coverage)](https://codeclimate.com/github/Wesrtty/js-oop-project-62/test_coverage)
 
 Валидатор данных – библиотека, с помощью которой можно проверять корректность любых данных. Подобных библиотек множество в каждом языке, так как практически все программы работают с внешними данными, которые нужно проверять на
  корректность. В первую очередь речь идет про данные форм заполняемых пользователями. За основу для проекта взята библиотека yup.
@@ -23,7 +26,7 @@ $ make lint
 
 ## Примеры использования
 
-### string 
+### `string`
 
 ```js
 const v = new Validator();
@@ -45,17 +48,18 @@ schema.contains('what').isValid('what does the fox say'); // true
 schema.contains('whatthe').isValid('what does the fox say'); // false
 ```
 
-#### string().required()
+#### `string().required()`
 Любая непустая строка.
 
-#### string().minLength(limit: number)
+#### `string().minLength(limit: number)`
 Строка равна или длиннее указанного числа.
 
-#### string().contains(text: string)
+#### `string().contains(text: string)`
 Строка содержит определённую подстроку.
 
+----
 
-### number
+### `number`
 
 ```js
 const v = new Validator();
@@ -77,16 +81,18 @@ schema.isValid(-3); // false
 schema.isValid(5); // true
 ```
 
-#### number().required()
+#### `number().required()`
 Любое число включая ноль.
 
-#### number().positive()
+#### `number().positive()`
 Положительное число.
 
-#### number().range(min: number, max: number)
+#### `number().range(min: number, max: number)`
 Диапазон в который должны попадать числа включая границы.
 
-#### array
+----
+
+#### `array`
 ```js
 const v = new Validator();
 
@@ -105,13 +111,15 @@ schema.sizeof(2);
 schema.isValid(['hexlet']); // false
 schema.isValid(['hexlet', 'code-basics']); // true
 ```
-#### array().required()
+#### `array().required()`
 Объект является массивом.
 
-#### array().sizeof(length: number)
+#### `array().sizeof(length: number)`
 Длина массива равна указанной.
 
-#### object
+----
+
+#### `object`
 
 ```js
 const v = new Validator();
@@ -130,5 +138,5 @@ schema.isValid({ name: '', age: null }); // false
 schema.isValid({ name: 'ada', age: -5 }); // false
 ```
 
-#### object().shape(fields: {})
+#### `object().shape(fields: {})`
 Определите ключи объекта и схемы для указанных ключей.
